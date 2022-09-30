@@ -1,0 +1,4 @@
+export const SUBMIT_LOGIN = 'SUBMIT_LOGIN';
+export const ADD_DESPESA = 'ADD_DESPESA';
+export const REMOVE_DESPESA = 'REMOVE_DESPESA';
+export const EDIT_DESPESA = 'EDIT_DESPESA';
