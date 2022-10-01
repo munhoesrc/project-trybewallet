@@ -1,8 +1,105 @@
-* {
-  background-color: rgb(39, 39, 39);
-  box-sizing: border-box;
-  color: white;
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&display=swap') ;
+
+body {
+  font-family: Montserrat, sans-serif;
   margin: 0;
-  padding: 0;
-  text-decoration: none;
+}
+
+.main-login {
+  align-items: center;
+  background: #201b2c;
+  display: flex;
+  height: 100vh;
+  justify-content: center;
+  width: 100vw;
+}
+
+.left-login {
+  align-items: center;
+  display: flex;
+  flex-direction: column;
+  height: 100vh;
+  justify-content: center;
+  width: 50vw;
+}
+
+.left-login > h1 {
+  color: #77ffc0;
+}
+
+.login-image {
+  width: 30vw;
+}
+
+.right-login {
+  align-items: center;
+  display: flex;
+  height: 100vh;
+  justify-content: center;
+  width: 50vw;
+}
+
+.card-login {
+  align-items: center;
+  background: #2f2841;
+  border-radius: 20px;
+  box-shadow: 0 10px 40px #00000056;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  padding: 30px 35px;
+  width: 60%;
+}
+
+.card-login > h1 {
+  color: #0f8;
+  font-weight: 800;
+  margin: 0;
+}
+
+.textfield {
+  align-items: flex-start;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  margin: 10px 0;
+  width: 100%;
+}
+
+.textfield > input {
+  background: #514869;
+  border: none;
+  border-radius: 10px;
+  box-shadow: 0 10px 40px #00000056;
+  box-sizing: border-box;
+  color: #f0ffffde;
+  font-size: 12pt;
+  outline: none;
+  padding: 15px;
+  width: 100%;
+}
+
+.textfield > span {
+  color: #f0ffffde;
+  margin-bottom: 10px;
+}
+
+.textfield > input::placeholder {
+  color: #f0ffff94;
+}
+
+.btn-login {
+  background: #0f8;
+  border: none;
+  border-radius: 8px;
+  box-shadow: 0 10px 40px -12px #00ff8052;
+  color: #2b134b;
+  cursor: pointer;
+  font-weight: 950;
+  letter-spacing: 3px;
+  margin: 25px;
+  outline: none;
+  padding: 16px 0;
+  text-transform: uppercase;
+  width: 100%;
 }

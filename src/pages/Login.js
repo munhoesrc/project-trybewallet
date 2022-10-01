@@ -2,6 +2,7 @@ import React from 'react';
 import { connect } from 'react-redux';
 import { func, shape } from 'prop-types';
 import submitLogin from '../redux/actions';
+import WalletAnimate from '../img/Wallet-amico.png';
 
 const PASSWORD_MIN_LENGTH = 6;
 class Login extends React.Component {
@@ -40,29 +41,48 @@ class Login extends React.Component {
     const { handleChange, handleLoginandgotoWallet, state } = this;
     const { email, password, isDisabled } = state;
     return (
-      <div>
-        <form>
-          <input
-            type="email"
-            name="email"
-            value={ email }
-            data-testid="email-input"
-            onChange={ handleChange }
-          />
-          <input
-            type="password"
-            name="password"
-            value={ password }
-            data-testid="password-input"
-            onChange={ handleChange }
-          />
-          <button
-            type="submit"
-            disabled={ isDisabled }
-            onClick={ (e) => handleLoginandgotoWallet(e, state) }
-          >
-            Entrar
-          </button>
+      <div className="main-login">
+        <div className="left-login">
+          <h1>Bem-vindo a Coin Wallet</h1>
+          <h1>O fim da complexidade</h1>
+          <img src={ WalletAnimate } className="login-image" alt="carteira animação" />
+        </div>
+        <form className="right-login">
+          <div className="card-login">
+            <h1>LOGIN</h1>
+            <div className="textfield">
+              <span>Usuário</span>
+              <br />
+              <input
+                type="email"
+                name="email"
+                placeholder="Usuário"
+                value={ email }
+                data-testid="email-input"
+                onChange={ handleChange }
+              />
+            </div>
+            <div className="textfield">
+              <span>Senha</span>
+              <br />
+              <input
+                type="password"
+                name="password"
+                placeholder="Senha"
+                value={ password }
+                data-testid="password-input"
+                onChange={ handleChange }
+              />
+            </div>
+            <button
+              className="btn-login"
+              type="submit"
+              disabled={ isDisabled }
+              onClick={ (e) => handleLoginandgotoWallet(e, state) }
+            >
+              Entrar
+            </button>
+          </div>
         </form>
       </div>
     );
