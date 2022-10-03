@@ -1,7 +1,7 @@
 import React from 'react';
 import { connect } from 'react-redux';
 import { func, shape } from 'prop-types';
-import submitLogin from '../redux/actions';
+import { submitLogin } from '../redux/actions';
 import WalletAnimate from '../img/Wallet-amico.png';
 
 const PASSWORD_MIN_LENGTH = 6;
