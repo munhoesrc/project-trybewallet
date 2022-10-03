@@ -3,9 +3,24 @@ import { connect } from 'react-redux';
 import PropTypes from 'prop-types';
 
 class Header extends Component {
+  despesasTotais = () => {
+    const { expenses } = this.props;
+    if (expenses.length > 0) {
+      const soma = expenses.reduce((acc, cur) => {
+        const moeda = cur.currency;
+        const cambio = cur.exchangeRates[moeda].ask;
+        const emBRL = Number(cambio) * Number(cur.value);
+        return acc + Number(emBRL);
+      }, 0);
+      return Number(soma).toFixed(2);
+    }
+    return 0;
+  };
+
   render() {
-    const { email } = this.props;
-    const valorTotal = 0;
+    const { email, expenses } = this.props;
+    console.log(expenses);
+    const total = this.despesasTotais();
     const cambio = 'BRL';
 
     return (
@@ -26,18 +41,15 @@ class Header extends Component {
           </div>
           <div>
             <p data-testid="total-field">
-              Despesa Total: R$
-              {' '}
-              {valorTotal}
-              {' '}
-              <span data-testid="header-currency-field">
-                {cambio}
-              </span>
+              {total}
+            </p>
+            <p data-testid="header-currency-field">
+              {cambio}
             </p>
           </div>
         </header>
 
-        <div className="input-despesa">
+        {/*         <div className="input-despesa">
           <label htmlFor="value">
             Valor:
             <input type="number" name="value" />
@@ -69,7 +81,7 @@ class Header extends Component {
             <input type="text" name="description" />
           </label>
           <button className="btn-add-despesa" type="submit">Adicionar despesa</button>
-        </div>
+        </div> */}
 
       </div>
     );
@@ -78,10 +90,12 @@ class Header extends Component {
 
 Header.propTypes = {
   email: PropTypes.string.isRequired,
+  expenses: PropTypes.instanceOf(Array).isRequired,
 };
 
-const mapStateToProps = ({ user }) => ({
+const mapStateToProps = ({ user, wallet }) => ({
   email: user.email,
+  expenses: wallet.expenses,
 });
 
 export default connect(mapStateToProps)(Header);
