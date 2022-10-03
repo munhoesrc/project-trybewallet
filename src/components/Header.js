@@ -12,9 +12,13 @@ class Header extends Component {
     const { email } = this.props;
     return (
       // <div>Header</div>
-      <div>
+      <div className="main-wallet">
+
         <header>
-          <div>TrybeWallet</div>
+          <h2>
+            Bem-Vindo a sua
+            <span className="title-wallet"> TrybeWallet</span>
+          </h2>
           <div>
             <p data-testid="email-field">
               Email:
@@ -25,12 +29,15 @@ class Header extends Component {
           <div>
             <p data-testid="total-field">
               Despesa Total: R$
+              {' '}
               {despesas}
+              {' '}
               <span data-testid="header-currency-field">BRL</span>
             </p>
           </div>
         </header>
-        <main>
+
+        <div className="input-despesa">
           <label htmlFor="value">
             Valor:
             <input type="number" name="value" />
@@ -61,8 +68,9 @@ class Header extends Component {
             Descrição:
             <input type="text" name="description" />
           </label>
-          <button type="submit">Adicionar despesa</button>
-        </main>
+          <button className="btn-add-despesa" type="submit">Adicionar despesa</button>
+        </div>
+
       </div>
     );
   }

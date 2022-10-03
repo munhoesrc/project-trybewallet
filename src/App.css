@@ -6,7 +6,6 @@ body {
 }
 
 /* STYLE DA PAGINA DE LOGIN */
-
 .main-login {
   align-items: center;
   background: #201b2c;
@@ -106,5 +105,62 @@ body {
   width: 100%;
 }
 
-/* STYLE DA PAGINA *NOME DA PAGINA */
-/* STYLE DA PAGINA *NOME DA PAGINA */
+/* STYLE DO HEADER DA PAGINA WALLET */
+header {
+  align-items: center;
+  background: #201b2c;
+  color: #0f8;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  padding: 0 15px;
+}
+
+h2 {
+  font-weight: 200;
+}
+
+.title-wallet {
+  font-size: 25pt;
+  font-weight: 600;
+  text-transform: uppercase;
+}
+
+/* STYLE DA PAGINA MAIN DA WALLLET */
+.main-wallet {
+  align-items: center;
+  background: #4b435e;
+  height: 100vh;
+  justify-content: space-around;
+  width: 100vw;
+}
+
+.input-despesa {
+  align-items: center;
+  background: #2f2841;
+  border-radius: 20px;
+  box-shadow: 0 10px 40px #00000056;
+  color: #0f8;
+  display: flex;
+  font-weight: 200;
+  justify-content: space-between;
+  margin: 20px 0 0 7.5%;
+  padding: 30px 35px;
+  width: 80%;
+}
+
+.btn-add-despesa {
+  background: #0f8;
+  border: none;
+  border-radius: 8px;
+  box-shadow: 0 10px 40px -12px #00ff8052;
+  color: #2b134b;
+  cursor: pointer;
+  font-weight: 800;
+  letter-spacing: 3px;
+  margin: 10px;
+  outline: none;
+  padding: 10px 0;
+  text-transform: uppercase;
+  width: 20%;
+}

@@ -43,7 +43,7 @@ class Login extends React.Component {
     return (
       <div className="main-login">
         <div className="left-login">
-          <h1>Bem-vindo a Coin Wallet</h1>
+          <h1>Bem-vindo a TrybeWallet</h1>
           <h1>O fim da complexidade</h1>
           <img src={ WalletAnimate } className="login-image" alt="carteira animação" />
         </div>
