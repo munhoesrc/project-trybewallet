@@ -5,21 +5,28 @@ import PropTypes from 'prop-types';
 class Header extends Component {
   despesasTotais = () => {
     const { expenses } = this.props;
-    if (expenses.length > 0) {
-      const soma = expenses.reduce((acc, cur) => {
-        const moeda = cur.currency;
-        const cambio = cur.exchangeRates[moeda].ask;
-        const emBRL = Number(cambio) * Number(cur.value);
-        return acc + Number(emBRL);
-      }, 0);
-      return Number(soma).toFixed(2);
-    }
-    return 0;
+    // if (expenses.length > 0) {
+    //   const soma = expenses.reduce((acc, cur) => {
+    //     const moeda = cur.currency;
+    //     const cambio = cur.exchangeRates[moeda].ask;
+    //     const emBRL = Number(cambio) * Number(cur.value);
+    //     return acc + Number(emBRL);
+    //   }, 0);
+    //   return Number(soma).toFixed(2);
+    // }
+    // return 0;
+    const soma = expenses.reduce((acc, cur) => {
+      const moeda = cur.currency;
+      const cambio = cur.exchangeRates[moeda].ask;
+      const emBRL = Number(cambio) * Number(cur.value);
+      return acc + Number(emBRL);
+    }, 0.00);
+    return Number(soma).toFixed(2);
   };
 
   render() {
-    const { email, expenses } = this.props;
-    console.log(expenses);
+    const { email } = this.props;
+    // console.log(expenses);
     const total = this.despesasTotais();
     const cambio = 'BRL';
 

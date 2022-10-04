@@ -1,7 +1,7 @@
 import React from 'react';
 import { connect } from 'react-redux';
 import PropTypes from 'prop-types';
-import { fetchAPICoins, fetchAPIExpense } from '../redux/actions';
+import { fetchAPICoins, fetchAPIExpense } from '../redux/actions/getAPI';
 
 class WalletForm extends React.Component {
   state = {
@@ -78,8 +78,8 @@ class WalletForm extends React.Component {
         <label htmlFor="moeda">
           Moeda:
           <select
-            name="currency"
             value={ currency }
+            name="currency"
             data-testid="currency-input"
             onChange={ (event) => { this.handleChange(event); } }
           >
@@ -94,8 +94,8 @@ class WalletForm extends React.Component {
         <label htmlFor="pagamento">
           Pagamento:
           <select
-            name="method"
             value={ method }
+            name="method"
             data-testid="method-input"
             onChange={ (event) => { this.handleChange(event); } }
           >
@@ -107,8 +107,8 @@ class WalletForm extends React.Component {
         <label htmlFor="categoria">
           Categoria:
           <select
-            name="tag"
             value={ tag }
+            name="tag"
             data-testid="tag-input"
             onChange={ (event) => { this.handleChange(event); } }
           >

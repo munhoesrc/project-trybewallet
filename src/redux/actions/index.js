@@ -1,5 +1,5 @@
 // Coloque aqui suas actions
-import { SUBMIT_LOGIN, ADD_COINS, ADD_EXPENSE } from './actionTypes';
+import { SUBMIT_LOGIN, ADD_COINS, ADD_EXPENSE, REMOVE_EXPENSE } from './actionTypes';
 
 export const submitLogin = (payload) => ({
   type: SUBMIT_LOGIN,
@@ -19,20 +19,7 @@ export const addExpense = (expense, cambio) => ({
   },
 });
 
-export function fetchAPICoins() {
-  return async (dispatch) => {
-    const endpoint = 'https://economia.awesomeapi.com.br/json/all';
-    const data = await fetch(endpoint);
-    const response = await data.json();
-    dispatch(addCoins(response));
-  };
-}
-
-export function fetchAPIExpense(expense) {
-  return async (dispatch) => {
-    const endpoint = 'https://economia.awesomeapi.com.br/json/all';
-    const data = await fetch(endpoint);
-    const response = await data.json();
-    dispatch(addExpense(expense, response));
-  };
-}
+export const removeExpense = (e) => ({
+  type: REMOVE_EXPENSE,
+  payload: e.id,
+});
