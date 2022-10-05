@@ -1,5 +1,12 @@
 // Coloque aqui suas actions
-import { SUBMIT_LOGIN, ADD_COINS, ADD_EXPENSE, REMOVE_EXPENSE } from './actionTypes';
+import {
+  SUBMIT_LOGIN,
+  ADD_COINS,
+  ADD_EXPENSE,
+  REMOVE_EXPENSE,
+  EDIT_EXPENSE,
+  SAVE_EXPENSE_EDIT,
+} from './actionTypes';
 
 export const submitLogin = (payload) => ({
   type: SUBMIT_LOGIN,
@@ -22,4 +29,15 @@ export const addExpense = (expense, cambio) => ({
 export const removeExpense = (e) => ({
   type: REMOVE_EXPENSE,
   payload: e.id,
+});
+
+export const editExpense = (id) => ({
+  type: EDIT_EXPENSE,
+  payload: true,
+  id,
+});
+
+export const saveExpenseEdit = (obj) => ({
+  type: SAVE_EXPENSE_EDIT,
+  obj,
 });

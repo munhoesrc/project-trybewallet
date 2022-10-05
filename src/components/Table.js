@@ -3,7 +3,7 @@ import PropTypes from 'prop-types';
 import { connect } from 'react-redux';
 import { BsTrash } from 'react-icons/bs';
 import { FiEdit } from 'react-icons/fi';
-import { removeExpense } from '../redux/actions';
+import { removeExpense } from '../redux/actions/index';
 
 class Table extends Component {
   cambio = (ask) => {
@@ -17,7 +17,7 @@ class Table extends Component {
   };
 
   render() {
-    const { expenses, remove } = this.props;
+    const { expenses, remove, editar } = this.props;
     return (
       // <div>Table</div>
       <div className="customers">
@@ -52,6 +52,7 @@ class Table extends Component {
                       className="btn-editar"
                       type="button"
                       data-testid="edit-btn"
+                      onClick={ () => editar(e.id) }
                     >
                       <FiEdit fontSize="20" />
                     </button>
@@ -77,15 +78,18 @@ class Table extends Component {
 
 const mapStateToProps = ({ wallet }) => ({
   expenses: wallet.expenses,
+  id: wallet.id,
 });
 
 const mapDispatchToProps = (dispatch) => ({
   remove: (expense) => dispatch(removeExpense(expense)),
+  editar: (expense) => dispatch(editExpense(expense)),
 });
 
 Table.propTypes = {
   expenses: PropTypes.instanceOf(Array).isRequired,
   remove: PropTypes.func.isRequired,
+  editar: PropTypes.func.isRequired,
 };
 
 export default connect(mapStateToProps, mapDispatchToProps)(Table);
