@@ -52,79 +52,87 @@ class WalletForm extends React.Component {
 
     return (
       // <div>WalletForm</div>
-      <div>
-        <label htmlFor="despesa">
-          Valor:
-          <input
-            type="text"
-            value={ value }
-            name="value"
-            data-testid="value-input"
-            onChange={ (event) => {
-              this.handleChange(event);
-            } }
-          />
-        </label>
-        <label htmlFor="descricao">
-          Descrição:
-          <input
-            type="text"
-            value={ description }
-            name="description"
-            data-testid="description-input"
-            onChange={ (event) => { this.handleChange(event); } }
-          />
-        </label>
-        <label htmlFor="moeda">
-          Moeda:
-          <select
-            value={ currency }
-            name="currency"
-            data-testid="currency-input"
-            onChange={ (event) => { this.handleChange(event); } }
+      <div className="main-wallet">
+        <div className="input-despesa">
+          <label htmlFor="despesa">
+            Valor:
+            <input
+              className="cx-input"
+              type="text"
+              value={ value }
+              name="value"
+              data-testid="value-input"
+              onChange={ (event) => {
+                this.handleChange(event);
+              } }
+            />
+          </label>
+          <label htmlFor="descricao">
+            Descrição:
+            <input
+              className="cx-input"
+              type="text"
+              value={ description }
+              name="description"
+              data-testid="description-input"
+              onChange={ (event) => { this.handleChange(event); } }
+            />
+          </label>
+          <label htmlFor="moeda">
+            Moeda:
+            <select
+              className="cx-input"
+              value={ currency }
+              name="currency"
+              data-testid="currency-input"
+              onChange={ (event) => { this.handleChange(event); } }
+            >
+              {
+                currencies.map((element, index) => (
+                  <option key={ index }>
+                    {element}
+                  </option>))
+              }
+            </select>
+          </label>
+          <label htmlFor="pagamento">
+            Pagamento:
+            <select
+              className="cx-input"
+              value={ method }
+              name="method"
+              data-testid="method-input"
+              onChange={ (event) => { this.handleChange(event); } }
+            >
+              <option> Dinheiro </option>
+              <option> Cartão de crédito </option>
+              <option> Cartão de débito </option>
+            </select>
+          </label>
+          <label htmlFor="categoria">
+            Categoria:
+            <select
+              className="cx-input"
+              value={ tag }
+              name="tag"
+              data-testid="tag-input"
+              onChange={ (event) => { this.handleChange(event); } }
+            >
+              <option> Alimentação </option>
+              <option> Lazer </option>
+              <option> Trabalho </option>
+              <option> Transporte </option>
+              <option> Saúde </option>
+            </select>
+          </label>
+          <button
+            className="btn-add-despesa"
+            type="button"
+            onClick={ this.handleClick }
           >
-            {
-              currencies.map((element, index) => (
-                <option key={ index }>
-                  {element}
-                </option>))
-            }
-          </select>
-        </label>
-        <label htmlFor="pagamento">
-          Pagamento:
-          <select
-            value={ method }
-            name="method"
-            data-testid="method-input"
-            onChange={ (event) => { this.handleChange(event); } }
-          >
-            <option> Dinheiro </option>
-            <option> Cartão de crédito </option>
-            <option> Cartão de débito </option>
-          </select>
-        </label>
-        <label htmlFor="categoria">
-          Categoria:
-          <select
-            value={ tag }
-            name="tag"
-            data-testid="tag-input"
-            onChange={ (event) => { this.handleChange(event); } }
-          >
-            <option> Alimentação </option>
-            <option> Lazer </option>
-            <option> Trabalho </option>
-            <option> Transporte </option>
-            <option> Saúde </option>
-          </select>
-        </label>
-        <button
-          type="button"
-          onClick={ this.handleClick }
-        >
-          Adicionar despesa
-        </button>
+            Adicionar despesa
+          </button>
+        </div>
       </div>
     );
   }

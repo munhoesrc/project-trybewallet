@@ -1,6 +1,7 @@
 @import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&display=swap') ;
 
 body {
+  background: #4b435e;
   font-family: Montserrat, sans-serif;
   margin: 0;
 }
@@ -113,10 +114,11 @@ header {
   display: flex;
   flex-direction: row;
   justify-content: space-between;
-  padding: 0 15px;
+  padding: 0 20px 0 16px;
 }
 
 h2 {
+  font-size: 1.5em;
   font-weight: 200;
 }
 
@@ -124,53 +126,106 @@ h2 {
   font-size: 25pt;
   font-weight: 600;
   text-transform: uppercase;
+
+  /* text-shadow: 0 6px 5px #514869; */
 }
 
 /* STYLE DA PAGINA MAIN DA WALLLET */
 .main-wallet {
   align-items: center;
-  background: #4b435e;
-  height: 100vh;
   justify-content: space-around;
   width: 100vw;
 }
 
 .input-despesa {
-  align-items: center;
+  align-items: flex-start;
   background: #2f2841;
   border-radius: 20px;
   box-shadow: 0 10px 40px #00000056;
-  color: #0f8;
+  color: #77ffc0;
   display: flex;
+  font-size: 11pt;
   font-weight: 200;
+  height: 10%;
   justify-content: space-between;
-  margin: 20px 0 0 7.5%;
+  margin: 1% 7.5%;
   padding: 30px 35px;
   width: 80%;
 }
 
+.cx-input {
+  background: #514869;
+  border: none;
+  border-radius: 10px;
+  box-shadow: 0 10px 40px #00000056;
+  box-sizing: border-box;
+  color: #f0ffffde;
+  font-weight: 800;
+  outline: none;
+  padding: 15px;
+  width: 80%;
+}
+
 .btn-add-despesa {
-  background: #0f8;
+  background: #77ffc0;
   border: none;
   border-radius: 8px;
   box-shadow: 0 10px 40px -12px #00ff8052;
   color: #2b134b;
   cursor: pointer;
+  font-size: 9pt;
   font-weight: 800;
   letter-spacing: 3px;
-  margin: 10px;
+  margin: 15px;
   outline: none;
   padding: 10px 0;
   text-transform: uppercase;
   width: 20%;
 }
 
-hr {
-  border: solid rgba(0, 0, 0, 0.767) 1px;
-  display: block;
-  width: 80%;
+/* STYLE DA TABLEA DENTRO DA MAIN */
+.style-tbody {
+  color: #f0ffffde;
+  text-align: center;
 }
 
-table {
-  margin-left: 130px;
+.customers {
+  border-collapse: separate;
+  cursor: pointer;
+  margin: 40px 180px;
+
+}
+
+.customers td , .customers th {
+  border-radius: 8px;
+}
+
+.customers tr:nth-child( even ) { background-color: #514869;}
+
+.customers tr:hover { background-color: #514868;}
+
+.customers th {
+  background-color: #04aa6d;
+  border-radius: 8px;
+  color: white;
+  padding-bottom: 10px;
+  padding-top: 10px;
+}
+
+.btn-editar {
+  background: transparent;
+  border: none;
+  color: #f0ffffde;
+  cursor: pointer;
+  margin: 0 10px;
+  outline: none;
+}
+
+.btn-excluir {
+  background: transparent;
+  border: none;
+  color: #f0ffffde;
+  cursor: pointer;
+  margin: 0 10px;
+  outline: none;
 }

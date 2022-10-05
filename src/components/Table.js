@@ -1,6 +1,8 @@
 import React, { Component } from 'react';
 import PropTypes from 'prop-types';
 import { connect } from 'react-redux';
+import { BsTrash } from 'react-icons/bs';
+import { FiEdit } from 'react-icons/fi';
 import { removeExpense } from '../redux/actions';
 
 class Table extends Component {
@@ -18,22 +20,22 @@ class Table extends Component {
     const { expenses, remove } = this.props;
     return (
       // <div>Table</div>
-      <div>
+      <div className="customers">
         <table>
           <thead>
-            <tr>
-              <th> Descrição | </th>
-              <th> Tag | </th>
-              <th> Método de pagamento | </th>
-              <th> Valor | </th>
-              <th> Moeda | </th>
-              <th> Câmbio utilizado | </th>
-              <th> Valor convertido | </th>
-              <th> Moeda de conversão | </th>
+            <tr className="table-head">
+              <th> Descrição </th>
+              <th> Tag </th>
+              <th> Método de pagamento </th>
+              <th> Valor </th>
+              <th> Moeda </th>
+              <th> Câmbio utilizado </th>
+              <th> Valor convertido </th>
+              <th> Moeda de conversão </th>
               <th> Editar/Excluir </th>
             </tr>
           </thead>
-          <tbody>
+          <tbody className="style-tbody">
             {
               expenses.map((e) => (
                 <tr key={ e.id }>
@@ -47,17 +49,20 @@ class Table extends Component {
                   <td>Real</td>
                   <td>
                     <button
+                      className="btn-editar"
                       type="button"
+                      data-testid="edit-btn"
                     >
-                      Editar
+                      <FiEdit fontSize="20" />
                     </button>
 
                     <button
+                      className="btn-excluir"
                       type="button"
                       data-testid="delete-btn"
                       onClick={ () => remove(e) }
                     >
-                      Excluir
+                      <BsTrash fontSize="20" />
                     </button>
                   </td>
                 </tr>
